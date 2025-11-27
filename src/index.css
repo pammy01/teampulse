@@ -1,0 +1,144 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 98%;
+    --foreground: 262 30% 25%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 262 30% 25%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 262 30% 25%;
+
+    /* Deep muted purple - main brand color */
+    --primary: 262 25% 35%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Lighter purple for secondary surfaces */
+    --secondary: 262 20% 92%;
+    --secondary-foreground: 262 30% 25%;
+
+    --muted: 240 10% 96%;
+    --muted-foreground: 240 5% 50%;
+
+    --accent: 262 20% 90%;
+    --accent-foreground: 262 30% 25%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 10% 90%;
+    --input: 240 10% 90%;
+    --ring: 262 25% 35%;
+
+    --radius: 0.875rem;
+
+    /* Sidebar - deep purple */
+    --sidebar-background: 262 25% 35%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 0 0% 100%;
+    --sidebar-primary-foreground: 262 25% 35%;
+    --sidebar-accent: 262 25% 40%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 262 25% 30%;
+    --sidebar-ring: 0 0% 100%;
+
+    /* Custom gradient colors */
+    --gradient-start: 343 89% 77%;
+    --gradient-end: 25 100% 67%;
+    
+    /* Chart colors */
+    --chart-1: 343 89% 77%;
+    --chart-2: 25 100% 67%;
+    --chart-3: 262 25% 35%;
+    --chart-4: 200 80% 60%;
+    --chart-5: 120 60% 50%;
+
+    /* Status colors */
+    --status-working: 142 76% 36%;
+    --status-break: 45 93% 47%;
+    --status-offline: 240 5% 64%;
+    --status-meeting: 217 91% 60%;
+
+    /* Transitions */
+    --transition-smooth: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 262 30% 12%;
+    --foreground: 0 0% 98%;
+
+    --card: 262 25% 16%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 262 25% 16%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 262 35% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 262 20% 20%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 262 15% 20%;
+    --muted-foreground: 240 5% 65%;
+
+    --accent: 262 20% 24%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 262 15% 24%;
+    --input: 262 15% 24%;
+    --ring: 262 35% 55%;
+
+    --sidebar-background: 262 30% 15%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 262 35% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 262 25% 22%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 262 20% 20%;
+    --sidebar-ring: 262 35% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
+
+@layer utilities {
+  .gradient-primary {
+    background: linear-gradient(135deg, hsl(var(--gradient-start)), hsl(var(--gradient-end)));
+  }
+
+  .shadow-card {
+    box-shadow: 0 6px 18px rgba(75, 63, 114, 0.04);
+  }
+
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+
+  .hover-lift {
+    @apply transition-smooth;
+  }
+  
+  .hover-lift:hover {
+    @apply -translate-y-0.5 shadow-lg;
+  }
+}
